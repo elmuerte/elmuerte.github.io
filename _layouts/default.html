@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>elmuerte.dev</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* actual style */
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	background: #000 url(background.svg) no-repeat center/cover;
+	font-family: sans-serif;
+	color: #c835f8;
+	display: flex;
+	flex-direction: column;
+}
+
+::selection {
+	background-color: #c835f8;
+	color: black;
+}
+
+a, a:visited {
+	color: inherit;
+}
+
+header {
+	background: url(logo.svg) no-repeat center/contain;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 33vmax;
+	height: 66%;
+}
+
+header h1 {
+	display: none;
+}
+
+main {
+	display: flex;
+	align-items: start;
+	justify-content: center;
+	flex-grow: 1;
+}
+
+section#links a {
+	text-decoration: none;
+}
+
+section#links ul {
+	margin: 0;
+	padding: 0;
+}
+
+section#links li {
+	display: inline;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	transition: all 2.5s;
+}
+
+section#links li:hover {
+	text-shadow: 0 0 8px #c835f8, 0 0 4px #c835f8;
+}
+
+section#links li::before {
+	content: "⌞";
+	position: relative;
+	bottom: -10px;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.5s;
+}
+section#links li:hover::before {
+	opacity: 1;
+	text-shadow: 0 0 8px #c835f8, 0 0 4px #c835f8;
+}
+section#links li::after {
+	content: "⌝";
+	position: relative;
+	width: 6px;
+	top: -5px;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.25s;
+}
+section#links li:hover::after {
+	opacity: 1;
+	text-shadow: 0 0 8px #c835f8, 0 0 4px #c835f8;
+}
+
+footer {
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	margin: 2em 0 0.2em 0;
+	font-family: monospace;
+	font-size: 0.7em;
+	text-align: center;
+	opacity: 0.5;
+	cursor: default;
+}
+
+footer:hover {
+	opacity: 1;
+}
+
+footer p {
+	display: inline-block;
+	padding: 0 1em 0 1em;
+	border-left: 1px solid #c835f8;
+}
+
+footer p:first-child {
+	border: 0;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Michiel "elmuerte" Hendriks</h1>
+</header>
+
+<main>
+
+<section id="links">
+<ul>
+	<li><a href="https://github.com/elmuerte" rel="me">GitHub</a></li>
+	<li><a href="https://magicball.net/">Magicball Network</a></li>
+	<li><a href="https://idlethumbs.social/@elmuerte" rel="me">Mastodon</a></li>
+</ul>
+</section>
+
+<section>
+{{ content }}
+</section>
+
+</main>
+
+<footer>
+<p>Copyright 2026 Michiel Hendriks</p>
+<p>Logo adapted from <a href="https://www.freepik.com/free-vector/reaper-skull-mascot-logo_418368184.htm">LAKTAPUS</a></p>
+<p>Background by <a href="https://www.freepik.com/free-vector/abstract-background-with-pink-purple-flowing-lines-design_255861391.htm">kjpargeter</a></p>
+</footer>
+
+</body>
+</html>
